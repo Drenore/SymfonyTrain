@@ -43,7 +43,12 @@ class Candidat
     private $motcle;
 
     /**
+     * @var App\Entity\Sujet
      * 
+     * @ORM\ManyToOne(targetEntity="App\Entity\Candidat")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idsujet", nullable=true, referencedColumnName="id")
+     * })
      */
     private $idSujet;
 
@@ -109,6 +114,15 @@ class Candidat
     {
         $this->motcle = $motcle;
 
+        return $this;
+    }
+    public function getIdSujet()
+    {
+        return $this->idSujet;
+    }
+    public function setIdSujet(int $idSujet): self
+    {
+        $this->idSujet = $idSujet;
         return $this;
     }
 }
