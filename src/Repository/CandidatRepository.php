@@ -73,4 +73,6 @@ class CandidatRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // LIKE '%IOT%' ou "Select $ from sujet where titre LIKE '%  '" .$motcle. "" and score > '" .$score. "" "
 }

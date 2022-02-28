@@ -7,5 +7,69 @@ Page pour ajouter un candidat
 {% endblock %}
 
 {% block body %}
+<div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Ajouter un candidat</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                 
+
+{{ form_start(formCandidat) }}
+{{ form_widget(formCandidat) }}
+
+ <input type="submit" class="btn btn-success">
+{{ form_end(formCandidat) }}
+
+</div>
+</div>
+</div>
+
+ <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Table Candidat</h4>
+                  <div class="table-responsive">
+
+                    <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Cin</th>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>Score</th>
+                        <th>Mot cle</th>
+                        <th>Action</th>
+                        <th>Afficher</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for candidat in Candidats %}
+                        <tr>
+                            <td><a>{{ candidat.id }}</a></td>
+                            <td>{{ candidat.Cin }}</td>
+                            <td>{{ candidat.nom }}</td>
+                            <td>{{ candidat.prenom }}</td>
+                            <td>{{ candidat.score }}</td> 
+                            <td>{{ candidat.motcle }}</td> 
+                            <td><a href="{{path('sup_candidat',{'id': candidat.id })}}" class="btn btn-danger">Supprimer</a></td>  
+                            <td><a href="{{path('aff_candidat',{'id': candidat.id})}}" class="btn-success"> Afficher </a></td>                     
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+
+                  </div>
+                  </div>
+                  </div>
+</div>
+                  
+
+
+
 
 {% endblock %}

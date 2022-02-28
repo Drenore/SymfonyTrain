@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir tout les sujets{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Table de sujets</h4>
+{% if Sujets != NULL %}
+<div class="table-responsive">
+
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Reference</th>
+        <th>Sujet</th>
+        <th>Description</th>
+        <th>Nombres de points</th>
+        <th>Action</th>
+        <th>Afficher</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sujet in Sujets %}
+        <tr>
+            <td><a>{{ sujet.id }}</a></td>
+            <td>{{ sujet.reference }}</td>
+            <td>{{ sujet.titre }}</td>
+            <td>{{ sujet.description }}</td>
+            <td>{{ sujet.nbpoints }}</td> 
+            <td><a href="{{path('sup_sujet',{'id': sujet.id })}}" class="btn btn-danger">Supprimer</a></td>    
+                               
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% else %}
+<div> Il n'y a pas de données récupéré  </div>
+{% endif %}
+
+</div></div></div></div>
+
+{% endblock %}

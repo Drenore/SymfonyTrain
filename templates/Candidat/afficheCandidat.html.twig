@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+
+Page pour ajouter un candidat
+
+{% endblock %}
+
+{% block body %}
+<div class="row">
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Ajouter un candidat</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                  <ul>
+                  <li>{{ candidat.id }}</li>
+                    <li>{{ candidat.cin }}</li>
+                    <li>{{ candidat.nom }}</li>
+                    <li>{{ candidat.prenom }}</li>
+                    <li>{{ candidat.score }}</li>
+                    <li>{{ candidat.motcle }}</li>
+                    <li>{{ candidat.idsujet }}</li>
+                  </ul>
+                </div>
+                </div>
+                </div>             
+             </div>    
+{% endblock %}
